@@ -1,8 +1,9 @@
 node {
     stage('Build'){
-            image 'python:2-alpine'
-    }{
-            sh "python -m py.compile sources/addvals.py source/calc.py"
+        image 'python:2-alpine'
+        }
+        {
+        sh "python -m py.compile sources/addvals.py source/calc.py"
             }
         }
     stage('Test'){
