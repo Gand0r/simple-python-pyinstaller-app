@@ -1,14 +1,10 @@
 node {
     stage('Build'){
-        agent{
-            docker{
-                image 'python:2-alpine'
+            image 'python:2-alpine'
+    }{
+            sh "python -m py.compile sources/addvals.py source/calc.py"
             }
         }
-        step{
-            sh "python -m py.compile sources/addvals.py source/calc.py"
-        }
-    }
     stage('Test'){
         agent{
             docker{
