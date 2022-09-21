@@ -5,7 +5,7 @@ node {
                 image 'python:2-alpine'
             }
         }
-        steps {
+        step{
             sh "python -m py.compile sources/addvals.py source/calc.py"
         }
     }
@@ -15,7 +15,7 @@ node {
                 image 'qnib/pytest'
             }
         }
-        steps{
+        step{
             sh 'py.test --verbose --junit-xml test-reports/results.xml sources/test_calc.py'
         }
         post{
